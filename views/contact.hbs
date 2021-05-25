@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <h2>Contact me</h2>
-    <div class="isSent">
-        {{#if isSent}}
-        The message has benn sent!
-        {{/if}}
-    </div>
-    <div class="isError">
-        {{#if isError}}
-        You can't leave fields empty
-        {{/if}}
-    </div>
-    <form action="/contact/send-message" method="POST">
+    {{#if isSent}}
+        <div class="isSent">
+            <p>The message has benn sent!</p>
+            <p>File {{ name }} has benn saved!</p>
+        </div>
+    {{/if}}
+    {{#if isError}}
+        <div class="isError">
+            You can't leave fields empty
+        </div>
+    {{/if}}
+    <form action="/contact/send-message" method="POST" enctype="multipart/form-data">
         <label>
             Your name: <input type="text" name="author">
         </label>
@@ -20,6 +21,9 @@
         </label>
         <label>
             Title: <input type="text" name="title">
+        </label>
+        <label>
+            Project design: <input type="file" name="design" accept=".png, .jpg, .jpeg, .gif">
         </label>
         <label>
             Message: <textarea name="message"></textarea>
