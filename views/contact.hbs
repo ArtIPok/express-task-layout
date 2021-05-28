@@ -3,8 +3,8 @@
     <h2>Contact me</h2>
     {{#if isSent}}
         <div class="isSent">
-            <p>The message has benn sent!</p>
-            <p>File {{ name }} has benn saved!</p>
+            <p>The message has benn sent!<br>
+            File {{ files.file.name }} has benn saved!</p>
         </div>
     {{/if}}
     {{#if isError}}
@@ -14,16 +14,16 @@
     {{/if}}
     <form action="/contact/send-message" method="POST" enctype="multipart/form-data">
         <label>
-            Your name: <input type="text" name="author">
+            Your name: <input type="text" name="author" autoComplete="off">
         </label>
         <label>
-            Your email: <input type="email" name="sender">
+            Your email: <input type="email" name="sender" autoComplete="off">
         </label>
         <label>
             Title: <input type="text" name="title">
         </label>
         <label>
-            Project design: <input type="file" name="design" accept=".png, .jpg, .jpeg, .gif">
+            Project design: <input type="file" name="file" accept=".png, .jpg, .jpeg, .gif" autocomplete="off">
         </label>
         <label>
             Message: <textarea name="message"></textarea>

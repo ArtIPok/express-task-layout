@@ -14,8 +14,10 @@ h1 {
 }
 
 p {
-  color: #999;
+  color: #FFF;
   font-size: 0.8rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 a {
